@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+<title>D3 Tutorial</title>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1-rc2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.11/crossfilter.js"
+	charset="utf-8"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0-beta.12/dc.min.js"
+	charset="utf-8"></script>
+<script src="../js/melt.js" charset="utf-8"></script>
+<script src="http://colorbrewer2.org/export/colorbrewer.js"
+	charset="utf-8">
+	
+</script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+	charset="utf-8">
+	
+</script>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0-beta.12/dc.min.css">
+<link rel="stylesheet" type="text/css"
+	href="http://colorbrewer2.org/export/colorbrewer.css">
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<style>
+.my-text {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+	height: 60px;
+	background-color: #f5f5f5;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+	min-height: 100%;
+	height: auto;
+	/* Negative indent footer by its height */
+	margin: 0 auto -60px;
+	/* Pad bottom by footer height */
+	padding: 0 0 60px;
+}
+</style>
+
+<script>
+	$(function() {
+		$("#sample-menu").load("menu.html");
+	});
+</script>
+</head>
+<body>
+
+	<!-- Wrap all page content here -->
+	<div id="wrap">
+		<div class='container my-text' id='main-container'>
+			<div id="sample-menu"></div>
+			<div class='container-fluid'>
+				<div class='row'>
+					<div class='span12'>
+						<div class="jumbotron">
+							<h1>DC D3 Crossfilter and Other D3 Compatible Samples</h1>
+							<p>
+								Welcome to the world of DC.JS, D3.JS , Other D3 based visualization frameworks !!<br> Use
+								the "Samples" drop down menu or click on the sample description below to explore the samples <br>
+							</p>
+							<div class="alert alert-info" role="alert">Some of the samples like the Earthquake dashboard use live data GET calls which will cause a CORS exception.Running those specific samples on the browser will require CORS disabled in browsers to work. In Chrome you can use  <b><i>--allow-file-access-from-files --disable-web-security</i></b> options for the same. As a fall back if CORS is not enabled it relies on an offline json dataset.</div>
+						</div>
+					</div>
+				</div>
+				<div class='row'>
+					<div class="list-group">
+						<a href="#" class="list-group-item active">
+							<h4 class="list-group-item-heading">List of Samples</h4>
+						</a>
+						<a href="sample1-dash.html" class="list-group-item">
+							<span class="label label-default" style="float:right;">dc.js</span>
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<span class="label label-success" style="float:right;">crossfilter.js</span>
+							<span class="label label-info" style="float:right;">melt.js</span>
+							<h4 class="list-group-item-heading">Vehicle Registration for Indian cities - dashboard</h4>
+							<p class="list-group-item-text">The data format has been taken from data.gov.in and provides a dashboard view of the registered motor vehicles in India from 2001 to 2011. The dashboard is looking at cities which have more than a million vehicle registrations.This uses melt.js, crossfilter,d3 and dc for the visualization. Used dc, crossfilter, d3 and melt.js for the data processing and visualization.</p>
+						</a>
+						<a href="sample2-map.html" class="list-group-item">
+							<span class="label label-default" style="float:right;">dc.js</span>
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<span class="label label-success" style="float:right;">crossfilter.js</span>
+							<h4 class="list-group-item-heading">US population density by state capitals</h4>
+							<p class="list-group-item-text">This uses the DC.js choropleth charts to map US state wise population with color coding of red to green to indicate the lower to high density of population. This has been inspired by the wonderful sample provided for US Venture Capital Landscape 2011 (http://dc-js.github.io/dc.js/vc/)</p>
+						</a>
+						<a href="sample3-earthquake.html" class="list-group-item">
+							<span class="label label-default" style="float:right;">dc.js</span>
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<span class="label label-success" style="float:right;">crossfilter.js</span>
+							<span class="label label-info" style="float:right;">datamaps.js</span>
+							<h4 class="list-group-item-heading">Live Earth quake - dashboard</h4>
+							<p class="list-group-item-text">Live visualization of data from earthquake-report.com updated every 10 minutes. Uses a combination of d3 , dc and datamaps to provide a graphical dashboard</p>
+							
+						</a>
+						<a href="sample4-in-railwayzones.html" class="list-group-item">
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<h4 class="list-group-item-heading">Indian Railway Zones and Divisions</h4>
+							<p class="list-group-item-text">D3 tree map to represent the India Railway Zones & Division hierarchy </p>
+						</a>
+						<a href="sample5-quarter.html" class="list-group-item">
+							<span class="label label-default" style="float:right;">dc.js</span>
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<span class="label label-success" style="float:right;">crossfilter.js</span>
+							<span class="label label-info" style="float:right;">melt.js</span>
+							<h4 class="list-group-item-heading">Website Log Monitoring Dashboard</h4>
+							<p class="list-group-item-text">Website log visualization taking into account the HTTP status code count per day and rolled up to a quarter </p>
+						</a>
+						<a href="sample6-spenddata.html" class="list-group-item">
+							<span class="label label-default" style="float:right;">nvd3.js</span>
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<span class="label label-success" style="float:right;">angularjs-nvd3.js</span>
+							<span class="label label-info" style="float:right;">angularjs-nvd3-directives.js</span>
+							<h4 class="list-group-item-heading">Spend Data Analysis</h4>
+							<p class="list-group-item-text">Spend data analysis using nvd3.js and angularjs. nvd3.js provides an abstraction over d3 and the angularjs based directives for nvd3 provide a very convenient and power tool for visualization of a sales spend dashboard.</p>
+						</a>
+						<a href="sample7-techradar.html" class="list-group-item">
+							<span class="label label-default" style="float:right;">crossfilter.js</span>
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<span class="label label-success" style="float:right;">melt.js</span>
+							<span class="label label-info" style="float:right;">dc.js</span>
+							<h4 class="list-group-item-heading">Radar Chart</h4>
+							<p class="list-group-item-text">Work in progress variation of Radar Chart by chrisrzhou. Currently has some bug fixes in the existing scripts.</p>
+						</a>
+						<a href="sample8-techradar2.html" class="list-group-item">
+							<span class="label label-primary" style="float:right;">d3.js</span>
+							<span class="label label-info" style="float:right;">d3-tip.js</span>
+							<h4 class="list-group-item-heading">TechRadar</h4>
+							<p class="list-group-item-text">Technology Radar variation derived from vitorbaptista/techradar , which dynamically changable radar input,color coding,ring styling, formatting. Also added support for table displaying the radar details with quadrant and support for however on blip text to see description </p>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div id="footer">
+				<div class="container">
+					<br>
+					<p class="text-muted credit">
+						D3 and D3 based visualization framework samples.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
